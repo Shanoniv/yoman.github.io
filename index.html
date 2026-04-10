@@ -1,117 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yoman Publicidad • Eco Yomán...">
-    <title>Yoman Publicidad • Eco Yomán</title>
+    <meta name="description" content="Yoman Publicidad • Eco Yomán: Automatización de Ventas + Marketing Digital para Inmobiliarias, Hoteles y Construcción en RD.">
+    <title>Yoman Publicidad • Eco Yomán • Futuro en Ventas Automáticas</title>
     
-    <!-- Tailwind CDN (mantener por ahora) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome (usa versión ligera si puedes) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer">
-    
-    <!-- Google Fonts con preload y display swap -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="assets/css/style.css" as="style">
 </head>
+<body class="font-sans antialiased bg-black text-white overflow-x-hidden">
+
     <!-- SCROLL PROGRESS -->
     <div id="scroll-progress" class="scroll-progress"></div>
 
     <!-- NAVBAR -->
     <nav class="bg-black/95 border-b border-white/10 backdrop-blur-2xl sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex justify-between items-center">
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-[#FFCC00] rounded-3xl flex items-center justify-center logo-glow">
-                <span class="text-black text-3xl font-bold">Y</span>
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-[#FFCC00] rounded-3xl flex items-center justify-center logo-glow">
+                    <span class="text-black text-4xl font-bold leading-none mt-1">Y</span>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold tracking-[-2px]">YOMAN</h1>
+                    <p class="text-[#FFCC00] text-xs -mt-1 tracking-[3px] font-medium">PUBLICIDAD</p>
+                </div>
             </div>
-            <div>
-                <h1 class="text-2xl font-bold tracking-[-1px]">YOMAN</h1>
-                <p class="text-[#FFCC00] text-[10px] -mt-1 tracking-[2px]">PUBLICIDAD</p>
-            </div>
-        </div>
-
-        <!-- Menú escritorio -->
-        <div class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
-            <a href="#inicio" class="nav-link">Inicio</a>
-            <a href="#eco-yoman" class="nav-link">Eco Yomán</a>
-            <a href="#aliados" class="nav-link">Aliados</a>
-            <a href="#sectores" class="nav-link">Sectores</a>
-            <a href="#servicios" class="nav-link">Servicios</a>
-            <a href="#portafolio" class="nav-link">Portafolio</a>
-            <a href="#nosotros" class="nav-link">Nosotros</a>
-        </div>
-
-        <!-- Botones -->
-        <div class="flex items-center gap-3">
-            <a href="/login.html" class="hidden sm:block px-5 py-2.5 border border-[#FFCC00] text-[#FFCC00] hover:bg-[#FFCC00] hover:text-black rounded-3xl text-sm font-medium">
-                Panel Admin
-            </a>
-            <a href="https://wa.me/8294840202" target="_blank" 
-               class="flex items-center gap-2 bg-[#FFCC00] hover:bg-white text-black px-6 py-3 rounded-3xl font-semibold text-sm">
-                <i class="fab fa-whatsapp"></i>
-                <span class="hidden sm:inline">Hablar ahora</span>
-            </a>
             
-            <!-- Botón menú móvil -->
-            <button id="mobile-menu-button" class="md:hidden text-2xl p-2">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="hidden md:flex gap-10 text-sm font-medium uppercase tracking-widest">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#eco-yoman" class="nav-link">Eco Yomán</a>
+                <a href="#aliados" class="nav-link">Aliados</a>
+                <a href="#sectores" class="nav-link">Sectores</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#portafolio" class="nav-link">Portafolio</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+            </div>
+            
+            <a href="https://wa.me/8294840202" target="_blank" class="flex items-center gap-3 bg-[#FFCC00] hover:bg-white text-black px-8 py-4 rounded-3xl font-semibold uppercase text-sm tracking-widest shadow-2xl shadow-[#FFCC00]/40">
+                <i class="fab fa-whatsapp text-xl"></i>
+                <span>Hablar ahora</span>
+            </a>
         </div>
-    </div>
-</nav>
+    </nav>
+
     <!-- HERO -->
-    <section id="inicio" class="hero-bg min-h-[100dvh] flex items-center relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-5 py-16 md:py-0">
-        <div class="grid md:grid-cols-2 gap-10 items-center">
-            <div class="space-y-8 text-center md:text-left">
-                <!-- badge más pequeño en móvil -->
-                <div class="inline-flex items-center glass text-xs font-medium px-5 py-2.5 rounded-3xl mx-auto md:mx-0">
-                    <span class="relative flex h-2.5 w-2.5 mr-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFCC00] opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#FFCC00]"></span>
-                    </span>
-                    ECO YOMÁN 2026
+    <section id="inicio" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center pt-12">
+            <div class="space-y-10">
+                <div class="inline-flex items-center glass text-white text-sm font-medium px-8 py-3 rounded-3xl border border-white/20">
+                    <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFCC00] opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-[#FFCC00]"></span></span>
+                    ECO YOMÁN • META • GOOGLE • KOMMO • 2026
                 </div>
-                
-                <h1 id="hero-title" class="text-5xl sm:text-6xl font-bold leading-none tracking-[-2px]">
-                    Tus ventas<br>que <span class="text-[#FFCC00]">funcionan solas</span>
-                </h1>
-                
-                <p id="hero-subtitle" class="text-lg sm:text-xl text-gray-300">
-                    Automatización inteligente para inmobiliarias, hoteles y construcción.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-                    <a href="#eco-yoman" class="bg-[#FFCC00] text-black font-semibold px-10 py-5 rounded-3xl text-lg">Activar Eco Yomán</a>
-                    <a href="#servicios" class="border-2 border-white text-white font-semibold px-10 py-5 rounded-3xl text-lg">Ver servicios</a>
+                <h1 id="hero-title" class="text-6xl md:text-7xl font-bold leading-none tracking-[-3px]">Tus ventas<br>que <span class="text-[#FFCC00]">funcionan solas</span></h1>
+                <p id="hero-subtitle" class="text-2xl text-gray-300">Automatización inteligente para inmobiliarias, hoteles y construcción.</p>
+                <div class="flex gap-4">
+                    <a href="#eco-yoman" class="bg-[#FFCC00] text-black text-2xl font-semibold px-12 py-6 rounded-3xl flex items-center gap-4 hover:scale-105">Activar Eco Yomán</a>
+                    <a href="#servicios" class="border-2 border-white text-white text-2xl font-semibold px-12 py-6 rounded-3xl">Ver servicios</a>
                 </div>
             </div>
-            
-            <!-- Ocultar el bloque derecho en móviles para ahorrar render -->
-            <div class="hidden md:block">
-                <!-- tu demo actual -->
+            <div class="relative hidden md:block">
+                <div class="glass p-8 rounded-[4rem]">
+                    <div class="bg-black/90 backdrop-blur-3xl rounded-3xl p-8 shadow-2xl">
+                        <div class="aspect-video bg-zinc-950 rounded-3xl flex items-center justify-center overflow-hidden">
+                            <div class="text-center">
+                                <div class="text-[#FFCC00] text-9xl mb-6 animate-pulse">📈</div>
+                                <p class="text-4xl font-bold">+420% leads</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-            
-            <!-- Imagen / Demo (oculto en móviles muy pequeños si quieres) -->
-            <div class="hidden md:block relative">
-                <!-- tu bloque de demo actual -->
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- ECO YOMÁN -->
     <section id="eco-yoman" class="py-24 bg-white text-black">
