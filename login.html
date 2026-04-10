@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoman • Dashboard Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-zinc-950 text-white min-h-screen">
+    <div class="max-w-4xl mx-auto p-8">
+        <div class="flex justify-between items-center mb-10">
+            <h1 class="text-4xl font-bold text-[#FFCC00]">YOMAN DASHBOARD</h1>
+            <button onclick="resetConfig()" class="px-6 py-3 bg-red-600 hover:bg-red-700 rounded-3xl text-sm font-medium">Restaurar valores por defecto</button>
+        </div>
+
+        <div class="space-y-10">
+            <!-- HERO -->
+            <div class="glass bg-zinc-900 rounded-3xl p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-home"></i> Hero</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm mb-2">Título principal</label>
+                        <input id="heroTitleInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2">Subtítulo</label>
+                        <input id="heroSubtitleInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PORTAFOLIO -->
+            <div class="glass bg-zinc-900 rounded-3xl p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-images"></i> Portafolio (fotos)</h2>
+                <div class="grid grid-cols-2 gap-6">
+                    <div><label class="block text-sm mb-2">Foto 1</label><input id="p1" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white text-sm"></div>
+                    <div><label class="block text-sm mb-2">Foto 2</label><input id="p2" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white text-sm"></div>
+                    <div><label class="block text-sm mb-2">Foto 3</label><input id="p3" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white text-sm"></div>
+                    <div><label class="block text-sm mb-2">Foto 4</label><input id="p4" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white text-sm"></div>
+                </div>
+            </div>
+
+            <!-- VÍDEO -->
+            <div class="glass bg-zinc-900 rounded-3xl p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-video"></i> Vídeo</h2>
+                <input id="videoInput" type="text" placeholder="URL del vídeo" class="w-full bg-black rounded-3xl px-6 py-4 text-white">
+            </div>
+
+            <!-- CONTACTO -->
+            <div class="glass bg-zinc-900 rounded-3xl p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-phone"></i> Contacto</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm mb-2">Teléfono WhatsApp</label>
+                        <input id="phoneInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2">Email</label>
+                        <input id="emailInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 flex gap-4">
+            <button onclick="saveConfig()" class="flex-1 bg-[#FFCC00] text-black py-6 rounded-3xl text-xl font-semibold hover:scale-105">GUARDAR CAMBIOS</button>
+            <button onclick="window.location.href='index.html'" class="flex-1 border border-white py-6 rounded-3xl text-xl font-semibold">Ver página principal</button>
+        </div>
+
+        <p class="text-center text-xs text-gray-500 mt-8">Los cambios se guardan en tu navegador. Abre index.html en otra pestaña para verlos en tiempo real.</p>
+    </div>
+
+    <script>
+        // Cargar valores guardados o por defecto
+        function loadConfig() {
+            const saved = localStorage.getItem('yomanConfig');
+            const config = saved ? JSON.parse(saved) : {
+                heroTitle: "Tus ventas<br>que <span class='text-[#FFCC00]'>funcionan solas</span>",
+                heroSubtitle: "Automatización inteligente para inmobiliarias, hoteles y construcción.",
+                portfolio1: "https://picsum.photos/id/1015/600/600",
+                portfolio2: "https://picsum.photos/id/201/600/600",
+                portfolio3: "https://picsum.photos/id/301/600/600",
+                portfolio4: "https://picsum.photos/id/401/600/600",
+                videoSrc: "https://assets.mixkit.co/videos/preview/1234/1234-small.mp4",
+                phone: "8294840202",
+                email: "yomanpublicidad@gmail.com"
+            };
+
+            document.getElementById('heroTitleInput').value = config.heroTitle.replace(/<[^>]+>/g, '');
+            document.getElementById('heroSubtitleInput').value = config.heroSubtitle;
+            document.getElementById('p1').value = config.portfolio1;
+            document.getElementById('p2').value = config.portfolio2;
+            document.getElementById('p3').value = config.portfolio3;
+            document.getElementById('p4').value = config.portfolio4;
+            document.getElementById('videoInput').value = config.videoSrc;
+            document.getElementById('phoneInput').value = config.phone;
+            document.getElementById('emailInput').value = config.email;
+        }
+
+        function saveConfig() {
+            const config = {
+                heroTitle: document.getElementById('heroTitleInput').value,
+                heroSubtitle: document.getElementById('heroSubtitleInput').value,
+                portfolio1: document.getElementById('p1').value,
+                portfolio2: document.getElementById('p2').value,
+                portfolio3: document.getElementById('p3').value,
+                portfolio4: document.getElementById('p4').value,
+                videoSrc: document.getElementById('videoInput').value,
+                phone: document.getElementById('phoneInput').value,
+                email: document.getElementById('emailInput').value
+            };
+            localStorage.setItem('yomanConfig', JSON.stringify(config));
+            alert('✅ ¡Cambios guardados! Recarga index.html para verlos.');
+        }
+
+        function resetConfig() {
+            if (confirm('¿Restaurar todo a los valores originales?')) {
+                localStorage.removeItem('yomanConfig');
+                loadConfig();
+                alert('Valores restaurados');
+            }
+        }
+
+        window.onload = loadConfig;
+    </script>
+</body>
+</html>
