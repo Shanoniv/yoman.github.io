@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - Yoman Admin</title>
+    <title>Iniciar Sesion - Yoman Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -16,49 +16,30 @@
 
         <form id="login-form" class="space-y-6">
             <div>
-                <label class="block text-sm mb-2">Correo electrónico</label>
-                <input id="email" type="email" required 
-                       class="w-full bg-zinc-900 border border-white/20 rounded-3xl px-6 py-4 focus:border-[#FFCC00]">
+                <label class="block text-sm mb-2">Correo electronico</label>
+                <input id="email" type="email" required class="w-full bg-zinc-900 border border-white/20 rounded-3xl px-6 py-4 focus:border-[#FFCC00]">
             </div>
             <div>
-                <label class="block text-sm mb-2">Contraseña</label>
-                <input id="password" type="password" required 
-                       class="w-full bg-zinc-900 border border-white/20 rounded-3xl px-6 py-4 focus:border-[#FFCC00]">
+                <label class="block text-sm mb-2">Contrasena</label>
+                <input id="password" type="password" required class="w-full bg-zinc-900 border border-white/20 rounded-3xl px-6 py-4 focus:border-[#FFCC00]">
             </div>
-            <button type="submit" 
-                    class="w-full bg-[#FFCC00] text-black py-6 rounded-3xl text-xl font-semibold">
-                Iniciar Sesión
+            <button type="submit" class="w-full bg-[#FFCC00] text-black py-6 rounded-3xl text-xl font-semibold">
+                Iniciar sesion
             </button>
         </form>
 
+        <div id="login-status" class="status-banner info">
+            Completa tu configuracion de Supabase en <code>assets/js/supabase-config.js</code> antes de iniciar sesion.
+        </div>
+
         <p class="text-center text-xs text-gray-500 mt-8">
-            ¿Olvidaste tu contraseña? Contacta al administrador.
+            Si olvidaste tu contrasena, crea o restaura el usuario desde Supabase Authentication.
         </p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script>
-        const supabaseUrl = 'TU_SUPABASE_URL';           // ← Cambia esto
-        const supabaseAnonKey = 'TU_ANON_KEY';           // ← Cambia esto
-
-        const supabase = Supabase.createClient(supabaseUrl, supabaseAnonKey);
-
-        document.getElementById('login-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            const { data, error } = await supabase.auth.signInWithPassword({
-                email,
-                password
-            });
-
-            if (error) {
-                alert('Error: ' + error.message);
-            } else {
-                window.location.href = '/admin.html';
-            }
-        });
-    </script>
+    <script src="assets/js/supabase-config.js"></script>
+    <script src="assets/js/supabase-client.js"></script>
+    <script src="assets/js/login.js"></script>
 </body>
 </html>

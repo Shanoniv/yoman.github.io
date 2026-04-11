@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoman Dashboard Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-zinc-950 text-white min-h-screen">
+    <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 mb-10">
+            <h1 class="text-4xl font-bold text-[#FFCC00]">YOMAN DASHBOARD</h1>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button id="reset-config-button" class="px-6 py-3 bg-red-600 hover:bg-red-700 rounded-3xl text-sm font-medium">Restaurar valores por defecto</button>
+                <button id="logout-button" class="px-6 py-3 border border-white/20 hover:bg-white hover:text-black rounded-3xl text-sm font-medium">Cerrar sesion</button>
+            </div>
+        </div>
+
+        <div id="dashboard-status" class="status-banner info mb-8">Conectando con Supabase...</div>
+
+        <div class="space-y-10">
+            <section class="glass bg-zinc-900 rounded-3xl p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-globe"></i> General</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div><label class="block text-sm mb-2">Titulo de la pagina</label><input id="pageTitleInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Meta descripcion SEO</label><input id="metaDescriptionInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">WhatsApp principal</label><input id="phoneInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Email de contacto</label><input id="emailInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div class="md:col-span-2"><label class="block text-sm mb-2">Texto del footer</label><input id="footerTextInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                </div>
+            </section>
+
+            <section class="glass bg-zinc-900 rounded-3xl p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-house"></i> Hero</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div><label class="block text-sm mb-2">Badge superior</label><input id="heroBadgeInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div>
+                        <label class="block text-sm mb-2">Video inicial del hero</label>
+                        <input id="heroVideoUrlInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white" placeholder="https://...mp4">
+                        <div class="mt-3 flex flex-col sm:flex-row gap-3">
+                            <input id="heroVideoFileInput" type="file" accept="video/*" class="block w-full text-sm text-gray-300">
+                            <button id="upload-hero-video-button" type="button" class="px-5 py-3 bg-[#FFCC00] text-black rounded-3xl text-sm font-semibold">Subir video hero</button>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2"><label class="block text-sm mb-2">Titulo principal</label><textarea id="heroTitleInput" rows="3" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></textarea></div>
+                    <div class="md:col-span-2"><label class="block text-sm mb-2">Subtitulo</label><textarea id="heroSubtitleInput" rows="2" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></textarea></div>
+                    <div><label class="block text-sm mb-2">Texto boton principal</label><input id="heroPrimaryCtaLabelInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Link boton principal</label><input id="heroPrimaryCtaUrlInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Texto boton secundario</label><input id="heroSecondaryCtaLabelInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Link boton secundario</label><input id="heroSecondaryCtaUrlInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                </div>
+            </section>
+
+            <section class="glass bg-zinc-900 rounded-3xl p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-sparkles"></i> Eco Yoman</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div><label class="block text-sm mb-2">Badge de seccion</label><input id="ecoBadgeInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Titulo de seccion</label><input id="ecoTitleInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Card 1 titulo</label><input id="ecoCard1TitleInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Card 1 descripcion</label><input id="ecoCard1DescInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Card 2 titulo</label><input id="ecoCard2TitleInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Card 2 descripcion</label><input id="ecoCard2DescInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Card 3 titulo</label><input id="ecoCard3TitleInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Card 3 descripcion</label><input id="ecoCard3DescInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                </div>
+            </section>
+
+            <section class="glass bg-zinc-900 rounded-3xl p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-images"></i> Portafolio</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="md:col-span-2"><label class="block text-sm mb-2">Titulo de portafolio</label><input id="portfolioTitleInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div>
+                        <label class="block text-sm mb-2">Imagen 1</label>
+                        <input id="p1" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white text-sm">
+                        <div class="mt-3 flex flex-col sm:flex-row gap-3">
+                            <input id="p1FileInput" type="file" accept="image/*" class="block w-full text-sm text-gray-300">
+                            <button id="upload-p1-button" type="button" class="px-5 py-3 bg-[#FFCC00] text-black rounded-3xl text-sm font-semibold">Subir imagen 1</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2">Imagen 2</label>
+                        <input id="p2" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white text-sm">
+                        <div class="mt-3 flex flex-col sm:flex-row gap-3">
+                            <input id="p2FileInput" type="file" accept="image/*" class="block w-full text-sm text-gray-300">
+                            <button id="upload-p2-button" type="button" class="px-5 py-3 bg-[#FFCC00] text-black rounded-3xl text-sm font-semibold">Subir imagen 2</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2">Imagen 3</label>
+                        <input id="p3" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white text-sm">
+                        <div class="mt-3 flex flex-col sm:flex-row gap-3">
+                            <input id="p3FileInput" type="file" accept="image/*" class="block w-full text-sm text-gray-300">
+                            <button id="upload-p3-button" type="button" class="px-5 py-3 bg-[#FFCC00] text-black rounded-3xl text-sm font-semibold">Subir imagen 3</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2">Imagen 4</label>
+                        <input id="p4" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white text-sm">
+                        <div class="mt-3 flex flex-col sm:flex-row gap-3">
+                            <input id="p4FileInput" type="file" accept="image/*" class="block w-full text-sm text-gray-300">
+                            <button id="upload-p4-button" type="button" class="px-5 py-3 bg-[#FFCC00] text-black rounded-3xl text-sm font-semibold">Subir imagen 4</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass bg-zinc-900 rounded-3xl p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-video"></i> Videos</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div><label class="block text-sm mb-2">Titulo del video inferior</label><input id="showcaseTitleInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div>
+                        <label class="block text-sm mb-2">URL del video inferior</label>
+                        <input id="videoInput" type="text" placeholder="https://...mp4" class="w-full bg-black rounded-3xl px-6 py-4 text-white">
+                        <div class="mt-3 flex flex-col sm:flex-row gap-3">
+                            <input id="showcaseVideoFileInput" type="file" accept="video/*" class="block w-full text-sm text-gray-300">
+                            <button id="upload-showcase-video-button" type="button" class="px-5 py-3 bg-[#FFCC00] text-black rounded-3xl text-sm font-semibold">Subir video inferior</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass bg-zinc-900 rounded-3xl p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-envelope"></i> Contacto</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div><label class="block text-sm mb-2">Badge de contacto</label><input id="contactBadgeInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div><label class="block text-sm mb-2">Titulo de contacto</label><input id="contactTitleInput" type="text" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></div>
+                    <div class="md:col-span-2"><label class="block text-sm mb-2">Descripcion de contacto</label><textarea id="contactDescriptionInput" rows="3" class="w-full bg-black rounded-3xl px-6 py-4 text-white"></textarea></div>
+                </div>
+            </section>
+
+            <section class="glass bg-zinc-900 rounded-3xl p-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                    <h2 class="text-2xl font-bold flex items-center gap-3"><i class="fas fa-user-group"></i> Leads</h2>
+                    <button id="refresh-leads-button" class="px-5 py-3 border border-white/20 hover:bg-white hover:text-black rounded-3xl text-sm font-medium">Actualizar leads</button>
+                </div>
+                <div id="leads-status" class="status-banner info mt-0 mb-6">Cargando leads desde Supabase...</div>
+                <div id="leads-empty" class="hidden text-sm text-gray-400">Aun no hay leads guardados.</div>
+                <div id="leads-list" class="space-y-4"></div>
+            </section>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+            <button id="save-config-button" class="flex-1 bg-[#FFCC00] text-black py-6 rounded-3xl text-xl font-semibold hover:scale-105">GUARDAR CAMBIOS</button>
+            <button onclick="window.location.href='index.html'" class="flex-1 border border-white py-6 rounded-3xl text-xl font-semibold">Ver pagina principal</button>
+        </div>
+
+        <p class="text-center text-xs text-gray-500 mt-8">Todos los cambios visibles de la pagina se guardan en Supabase.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/supabase-config.js"></script>
+    <script src="assets/js/supabase-client.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

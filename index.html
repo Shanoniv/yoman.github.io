@@ -3,163 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yoman Publicidad • Eco Yomán: Automatización de Ventas + Marketing Digital para Inmobiliarias, Hoteles y Construcción en RD.">
-    <title>Yoman Publicidad • Eco Yomán • Futuro en Ventas Automáticas</title>
-    
+    <meta id="page-meta-description" name="description" content="Yoman Publicidad. Automatizacion de ventas y marketing digital para inmobiliarias, hoteles y construccion en RD.">
+    <title id="page-title">Yoman Publicidad</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="font-sans antialiased bg-black text-white overflow-x-hidden">
-
-    <!-- SCROLL PROGRESS -->
     <div id="scroll-progress" class="scroll-progress"></div>
 
-    <!-- NAVBAR -->
     <nav class="bg-black/95 border-b border-white/10 backdrop-blur-2xl sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex justify-between items-center">
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-[#FFCC00] rounded-3xl flex items-center justify-center logo-glow">
-                <span class="text-black text-3xl font-bold">Y</span>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#FFCC00] rounded-3xl flex items-center justify-center logo-glow">
+                    <span class="text-black text-3xl font-bold">Y</span>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold tracking-[-1px]">YOMAN</h1>
+                    <p class="text-[#FFCC00] text-[10px] -mt-1 tracking-[2px]">PUBLICIDAD</p>
+                </div>
             </div>
-            <div>
-                <h1 class="text-2xl font-bold tracking-[-1px]">YOMAN</h1>
-                <p class="text-[#FFCC00] text-[10px] -mt-1 tracking-[2px]">PUBLICIDAD</p>
+
+            <div class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#eco-yoman" class="nav-link">Eco Yoman</a>
+                <a href="#portafolio" class="nav-link">Portafolio</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="login.html" class="hidden md:block px-5 py-2.5 border border-[#FFCC00] text-[#FFCC00] hover:bg-[#FFCC00] hover:text-black rounded-3xl text-sm font-medium">Panel Admin</a>
+                <a id="nav-whatsapp-link" href="https://wa.me/8294840202" target="_blank" class="flex items-center gap-2 bg-[#FFCC00] hover:bg-white text-black px-6 py-3 rounded-3xl font-semibold text-sm">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="hidden sm:inline">Hablar ahora</span>
+                </a>
             </div>
         </div>
+    </nav>
 
-        <!-- Menú escritorio -->
-        <div class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
-            <a href="#inicio" class="nav-link">Inicio</a>
-            <a href="#eco-yoman" class="nav-link">Eco Yomán</a>
-            <a href="#aliados" class="nav-link">Aliados</a>
-            <a href="#sectores" class="nav-link">Sectores</a>
-            <a href="#servicios" class="nav-link">Servicios</a>
-            <a href="#portafolio" class="nav-link">Portafolio</a>
-            <a href="#nosotros" class="nav-link">Nosotros</a>
-        </div>
-
-        <!-- Botones -->
-        <div class="flex items-center gap-3">
-            <a href="/login.html" class="hidden sm:block px-5 py-2.5 border border-[#FFCC00] text-[#FFCC00] hover:bg-[#FFCC00] hover:text-black rounded-3xl text-sm font-medium">
-                Panel Admin
-            </a>
-            <a href="https://wa.me/8294840202" target="_blank" 
-               class="flex items-center gap-2 bg-[#FFCC00] hover:bg-white text-black px-6 py-3 rounded-3xl font-semibold text-sm">
-                <i class="fab fa-whatsapp"></i>
-                <span class="hidden sm:inline">Hablar ahora</span>
-            </a>
-            
-            <!-- Botón menú móvil -->
-            <button id="mobile-menu-button" class="md:hidden text-2xl p-2">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </div>
-</nav>
-    <!-- HERO -->
     <section id="inicio" class="hero-bg min-h-screen flex items-center relative overflow-hidden pt-16 md:pt-0">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-12 md:py-0">
-        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-            <!-- Texto -->
-            <div class="space-y-8 text-center md:text-left">
-                <div class="inline-flex items-center glass text-white text-xs sm:text-sm font-medium px-6 py-3 rounded-3xl border border-white/20 mx-auto md:mx-0">
-                    <span class="relative flex h-3 w-3 mr-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFCC00] opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-[#FFCC00]"></span></span>
-                    ECO YOMÁN • 2026
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 py-12 md:py-0">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                <div class="space-y-8 text-center md:text-left">
+                    <div id="hero-badge" class="inline-flex items-center glass text-white text-xs sm:text-sm font-medium px-6 py-3 rounded-3xl border border-white/20 mx-auto md:mx-0">
+                        <span class="relative flex h-3 w-3 mr-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFCC00] opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-[#FFCC00]"></span></span>
+                        ECO YOMAN 2026
+                    </div>
+                    <h1 id="hero-title" class="text-5xl sm:text-6xl md:text-7xl font-bold leading-none tracking-[-2px]">Tus ventas<br>que <span class="text-[#FFCC00]">funcionan solas</span></h1>
+                    <p id="hero-subtitle" class="text-xl sm:text-2xl text-gray-300 max-w-lg mx-auto md:mx-0">Automatizacion inteligente para inmobiliarias, hoteles y construccion.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a id="hero-primary-cta" href="#eco-yoman" class="bg-[#FFCC00] text-black text-xl font-semibold px-10 py-5 rounded-3xl flex items-center justify-center gap-3 hover:scale-105">Activar Eco Yoman</a>
+                        <a id="hero-secondary-cta" href="#portafolio" class="border-2 border-white text-white text-xl font-semibold px-10 py-5 rounded-3xl">Ver portafolio</a>
+                    </div>
                 </div>
-                
-                <h1 id="hero-title" class="text-5xl sm:text-6xl md:text-7xl font-bold leading-none tracking-[-2px]">
-                    Tus ventas<br>que <span class="text-[#FFCC00]">funcionan solas</span>
-                </h1>
-                
-                <p id="hero-subtitle" class="text-xl sm:text-2xl text-gray-300 max-w-lg mx-auto md:mx-0">
-                    Automatización inteligente para inmobiliarias, hoteles y construcción.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#eco-yoman" class="bg-[#FFCC00] text-black text-xl font-semibold px-10 py-5 rounded-3xl flex items-center justify-center gap-3 hover:scale-105">
-                        Activar Eco Yomán
-                    </a>
-                    <a href="#servicios" class="border-2 border-white text-white text-xl font-semibold px-10 py-5 rounded-3xl">
-                        Ver servicios
-                    </a>
+
+                <div class="relative">
+                    <div class="glass rounded-[2rem] overflow-hidden shadow-2xl shadow-[#FFCC00]/20 border border-white/10">
+                        <video id="hero-video" controls autoplay muted loop playsinline class="w-full aspect-[4/5] object-cover">
+                            <source id="hero-video-source" src="https://assets.mixkit.co/videos/preview/1234/1234-small.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="absolute -bottom-6 -left-4 glass rounded-3xl px-5 py-4 text-sm text-gray-200">Yoman en accion</div>
                 </div>
-            </div>
-            
-            <!-- Imagen / Demo (oculto en móviles muy pequeños si quieres) -->
-            <div class="hidden md:block relative">
-                <!-- tu bloque de demo actual -->
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- ECO YOMÁN -->
     <section id="eco-yoman" class="py-24 bg-white text-black">
         <div class="max-w-7xl mx-auto px-8">
             <div class="text-center mb-16">
-                <span class="glass text-black font-bold uppercase tracking-widest px-8 py-3 rounded-3xl text-sm">Eco Yomán</span>
-                <h2 class="text-5xl font-bold mt-6">Tu ecosistema digital que vende 24/7</h2>
+                <span id="eco-badge" class="glass text-black font-bold uppercase tracking-widest px-8 py-3 rounded-3xl text-sm">Eco Yoman</span>
+                <h2 id="eco-title" class="text-5xl font-bold mt-6">Tu ecosistema digital que vende 24/7</h2>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- cards originales sin cambios -->
                 <div class="card-3d glass bg-black text-white rounded-3xl p-10 text-center">
                     <div class="volumetric-icon mx-auto mb-6"><i class="fas fa-bullhorn"></i></div>
-                    <h3 class="text-3xl font-bold">Captación Inteligente</h3>
-                    <p class="text-gray-400 mt-4">Meta Ads, Google Ads y YouTube hipersegmentados</p>
+                    <h3 id="eco-card1-title" class="text-3xl font-bold">Captacion Inteligente</h3>
+                    <p id="eco-card1-desc" class="text-gray-400 mt-4">Meta Ads, Google Ads y YouTube hipersegmentados.</p>
                 </div>
                 <div class="card-3d glass bg-black text-white rounded-3xl p-10 text-center">
                     <div class="volumetric-icon mx-auto mb-6"><i class="fas fa-robot"></i></div>
-                    <h3 class="text-3xl font-bold">Automatización Total</h3>
-                    <p class="text-gray-400 mt-4">WhatsApp Bots, Kommo CRM y funnels inteligentes</p>
+                    <h3 id="eco-card2-title" class="text-3xl font-bold">Automatizacion Total</h3>
+                    <p id="eco-card2-desc" class="text-gray-400 mt-4">WhatsApp Bots, CRM y funnels inteligentes.</p>
                 </div>
                 <div class="card-3d glass bg-black text-white rounded-3xl p-10 text-center">
                     <div class="volumetric-icon mx-auto mb-6"><i class="fas fa-chart-line"></i></div>
-                    <h3 class="text-3xl font-bold">Cierre y Fidelización</h3>
-                    <p class="text-gray-400 mt-4">Reservas automáticas y remarketing 24/7</p>
+                    <h3 id="eco-card3-title" class="text-3xl font-bold">Cierre y Fidelizacion</h3>
+                    <p id="eco-card3-desc" class="text-gray-400 mt-4">Reservas automaticas y remarketing 24/7.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ALIADOS, SECTORES, SERVICIOS (se mantienen igual que en tu código original) -->
-    <!-- ... (copié exactamente igual para no alargar innecesariamente) ... -->
-
-    <!-- PORTAFOLIO -->
     <section id="portafolio" class="py-24 bg-white text-black">
         <div class="max-w-7xl mx-auto px-8">
-            <h2 class="text-5xl font-bold text-center mb-12">Portafolio</h2>
+            <h2 id="portfolio-title" class="text-5xl font-bold text-center mb-12">Portafolio</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="rounded-3xl overflow-hidden"><img id="portfolio-img-1" src="https://picsum.photos/id/1015/600/600" alt="Branding" class="w-full"></div>
-                <div class="rounded-3xl overflow-hidden"><img id="portfolio-img-2" src="https://picsum.photos/id/201/600/600" alt="Letrero" class="w-full"></div>
-                <div class="rounded-3xl overflow-hidden"><img id="portfolio-img-3" src="https://picsum.photos/id/301/600/600" alt="Oficina" class="w-full"></div>
-                <div class="rounded-3xl overflow-hidden"><img id="portfolio-img-4" src="https://picsum.photos/id/401/600/600" alt="Estudio" class="w-full"></div>
+                <div class="rounded-3xl overflow-hidden"><img id="portfolio-img-1" src="https://picsum.photos/id/1015/600/600" alt="Trabajo 1" class="w-full aspect-square object-cover"></div>
+                <div class="rounded-3xl overflow-hidden"><img id="portfolio-img-2" src="https://picsum.photos/id/201/600/600" alt="Trabajo 2" class="w-full aspect-square object-cover"></div>
+                <div class="rounded-3xl overflow-hidden"><img id="portfolio-img-3" src="https://picsum.photos/id/301/600/600" alt="Trabajo 3" class="w-full aspect-square object-cover"></div>
+                <div class="rounded-3xl overflow-hidden"><img id="portfolio-img-4" src="https://picsum.photos/id/401/600/600" alt="Trabajo 4" class="w-full aspect-square object-cover"></div>
             </div>
         </div>
     </section>
 
-    <!-- VÍDEO -->
     <section class="py-24 bg-black">
         <div class="max-w-7xl mx-auto px-8">
-            <h2 class="text-5xl font-bold text-center mb-12">Nuestro trabajo en movimiento</h2>
+            <h2 id="showcase-title" class="text-5xl font-bold text-center mb-12">Nuestro trabajo en movimiento</h2>
             <div class="glass aspect-video rounded-3xl overflow-hidden shadow-2xl shadow-[#FFCC00]/30">
-                <video id="demo-video" controls autoplay loop muted class="w-full h-full object-cover">
+                <video id="demo-video" controls autoplay loop muted playsinline class="w-full h-full object-cover">
                     <source id="video-source" src="https://assets.mixkit.co/videos/preview/1234/1234-small.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
     </section>
 
-    <!-- UBICACIÓN + CONTACTO + NOSOTROS + FOOTER (exactamente igual que tu código original) -->
-    <!-- ... (mantengo todo igual) ... -->
+    <section id="contacto" class="py-24 bg-white text-black">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+                <div>
+                    <span id="contact-badge" class="glass text-black font-bold uppercase tracking-widest px-8 py-3 rounded-3xl text-sm">Contacto</span>
+                    <h2 id="contact-title" class="text-5xl font-bold mt-6">Solicita tu propuesta</h2>
+                    <p id="contact-description" class="text-lg text-zinc-600 mt-6 max-w-xl">Cuentanos que tipo de negocio tienes y te ayudamos a montar una captacion automatizada con seguimiento real.</p>
+                </div>
+                <div class="glass bg-black text-white rounded-3xl p-8">
+                    <form id="contact-form" class="space-y-5">
+                        <div>
+                            <label class="block text-sm mb-2">Nombre</label>
+                            <input name="name" type="text" required class="w-full bg-zinc-900 border border-white/20 rounded-3xl px-6 py-4 focus:border-[#FFCC00]">
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm mb-2">Telefono</label>
+                                <input name="phone" type="text" required class="w-full bg-zinc-900 border border-white/20 rounded-3xl px-6 py-4 focus:border-[#FFCC00]">
+                            </div>
+                            <div>
+                                <label class="block text-sm mb-2">Email</label>
+                                <input name="email" type="email" required class="w-full bg-zinc-900 border border-white/20 rounded-3xl px-6 py-4 focus:border-[#FFCC00]">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-2">Sector</label>
+                            <select name="business_type" required class="w-full bg-zinc-900 border border-white/20 rounded-3xl px-6 py-4 focus:border-[#FFCC00]">
+                                <option value="">Selecciona una opcion</option>
+                                <option value="Inmobiliaria">Inmobiliaria</option>
+                                <option value="Hotel">Hotel</option>
+                                <option value="Construccion">Construccion</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-2">Mensaje</label>
+                            <textarea name="message" rows="5" required class="w-full bg-zinc-900 border border-white/20 rounded-3xl px-6 py-4 focus:border-[#FFCC00]"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#FFCC00] text-black py-5 rounded-3xl text-lg font-semibold hover:scale-[1.02]">Enviar solicitud</button>
+                    </form>
+                    <div id="contact-status" class="status-banner info">Tu mensaje se guardara en Supabase para seguimiento comercial.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="bg-black py-12 text-center text-xs text-gray-400">
-        © 2026 Yoman Publicidad • Familia Creativa • República Dominicana
-    </footer>
+    <footer id="footer-text" class="bg-black py-12 text-center text-xs text-gray-400">&copy; 2026 Yoman Publicidad</footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/supabase-config.js"></script>
+    <script src="assets/js/supabase-client.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
